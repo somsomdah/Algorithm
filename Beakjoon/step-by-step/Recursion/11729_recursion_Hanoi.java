@@ -5,7 +5,6 @@ import java.io.*;
 
 class TowerOfHanoi {
 	static ArrayList<String> path = new ArrayList<>();
-	static int count = 0;
 
 	TowerOfHanoi() {
 
@@ -15,7 +14,6 @@ class TowerOfHanoi {
 		int temp = 6 - (src + dst);
 		if (n == 1) {
 			path.add(src + " " + dst);
-			count++;
 		} else {
 			stack_tower(n - 1, src, temp);
 			stack_tower(1, src, dst);
@@ -24,7 +22,7 @@ class TowerOfHanoi {
 	}
 	
 	void print() {
-		System.out.println(count);
+		System.out.println(path.size());
 		for(int i=0;i<path.size();i++)
 			System.out.println(path.get(i));
 	}
@@ -33,14 +31,12 @@ class TowerOfHanoi {
 class hanoi {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
 		TowerOfHanoi tower = new TowerOfHanoi();
 		tower.stack_tower(n, 1, 3);
 		tower.print();
-		
 
 	}
 }
