@@ -9,7 +9,6 @@ import java.util.StringTokenizer;
 public class QuickSort {
 	
 	static void QuickSort_(ArrayList<Integer> A,int p,int q){
-		System.out.println(p+" "+q);
 		
 		if(p<q) {
 			int pivotIdx=(int)(p+q)/2;
@@ -39,8 +38,7 @@ public class QuickSort {
 				}
 			}
 
-			
-			System.out.println(A);
+
 			QuickSort_(A,p,pivotIdx);
 			QuickSort_(A,pivotIdx+1,q);
 		}
