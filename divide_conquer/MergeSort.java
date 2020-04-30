@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 public class MergeSort {
 	
-	static void Merge(ArrayList<Integer> A,int p, int q, int k) {
+	static void merge(ArrayList<Integer> A,int p, int q, int k) {
 		
 		ArrayList<Integer> B=new ArrayList<>();
 		
@@ -48,13 +48,13 @@ public class MergeSort {
 
 	}
 	
-	static void MergeSort_(ArrayList<Integer> A,int p, int q) {
+	static void mergeSort(ArrayList<Integer> A,int p, int q) {
 		
 		if (p+1<q) { // devide 가능한 조건
 			int k=(int)(p+q)/2;
-			MergeSort_(A,p,k);
-			MergeSort_(A,k,q);
-			Merge(A,p,q,k);
+			mergeSort(A,p,k);
+			mergeSort(A,k,q);
+			merge(A,p,q,k);
 
 		}
 
@@ -71,7 +71,7 @@ public class MergeSort {
 			A.add(Integer.parseInt(st.nextToken()));
 		}
 
-		MergeSort_(A,0,A.size());
+		mergeSort(A,0,A.size());
 		
 		System.out.println(A);
 

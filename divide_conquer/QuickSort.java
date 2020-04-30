@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 public class QuickSort {
 	
-	static void QuickSort_(ArrayList<Integer> A,int p,int q){
+	static void quickSort(ArrayList<Integer> A,int p,int q){
 		
 		if(p<q) {
 			int pivotIdx=(int)(p+q)/2;
@@ -27,7 +27,7 @@ public class QuickSort {
 			}
 			
 			tempIdx=pivotIdx+1;
-			while(tempIdx<p) {
+			while(tempIdx<q) {
 				int temp=A.get(tempIdx);
 				if(temp>pivot) {
 					tempIdx++;
@@ -39,13 +39,13 @@ public class QuickSort {
 			}
 
 
-			QuickSort_(A,p,pivotIdx);
-			QuickSort_(A,pivotIdx+1,q);
+			quickSort(A,p,pivotIdx);
+			quickSort(A,pivotIdx+1,q);
 		}
 	}
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
+
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		String input=br.readLine();
 		StringTokenizer st=new StringTokenizer(input," ");
@@ -55,7 +55,7 @@ public class QuickSort {
 			A.add(Integer.parseInt(st.nextToken()));
 		}
 		
-		QuickSort_(A,0,A.size());
+		quickSort(A,0,A.size());
 		
 		System.out.println(A);
 
