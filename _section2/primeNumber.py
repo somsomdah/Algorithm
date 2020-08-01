@@ -4,13 +4,24 @@
 '''
 
 import sys
+n=int(sys.stdin.readline())
 
-N=int(sys.stdin.readline())
+checklist=[0]*(n+1)
+count=0
+
+for i in range(2,n+1):
+     if checklist[i]==0:
+          count+=1
+          for j in range(i,n+1,i):
+               checklist[j]=1
+print(count)
 
 
 '''
-# fail
+#fail#
+
 def prime_num(num_list,num,max_num):
+     #print(num_list)
      if num>=max_num:
           print(len(num_list))
           return;
@@ -23,6 +34,6 @@ def prime_num(num_list,num,max_num):
           prime_num(num_list,num+1,max_num)
 
           
-
 prime_num([2],2,N)
+
 '''
