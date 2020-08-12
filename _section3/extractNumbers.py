@@ -17,20 +17,22 @@ for c in string:
           resnum=resnum*10+int(c)
 print(resnum)
 
+count=0
+for i in range(2,resnum//2+1):
+     if resnum%i==0:
+          count+=1
+print(count+2) # 1과 자기자신
+
 '''
 strnum=[0,1,2,3,4,5,6,7,8,9]
 strnum=list(map(str,strnum))
 
 resnum=""
 for c in string:
-     if c in strnum: # if c.isdigit() or isdecimal()
-          resnum+=c #res=res*10+c### 중요
+     if c in strnum:         # if c.isdigit() or isdecimal()
+          resnum+=c       #res=res*10+c ### 중요
 
 resnum=int(resnum)
 print(resnum)
 '''
-count=0
-for i in range(2,resnum//2+1):
-     if resnum%i==0:
-          count+=1
-print(count+2) # 1과 자기자신
+
