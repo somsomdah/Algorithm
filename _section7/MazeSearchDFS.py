@@ -16,6 +16,7 @@ def dfs(x,y):
                yy=y+dy[i]
 
                if 0<=xx<=6 and 0<=yy<=6 and board[xx][yy]==0:
+                    # 백트래킹 공식
                     board[xx][yy]=1
                     dfs(xx,yy)
                     board[xx][yy]=0

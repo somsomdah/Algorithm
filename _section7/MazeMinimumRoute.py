@@ -18,7 +18,6 @@ while Q:
           y=tmp[1]+dy[i]
 
           if 0<=x<=6 and 0<=y<=6 and maze[x][y]==0:
-               # 이 순서를 왜 지켜야 하는지 모르겠음
                maze[x][y]=1
                dist[x][y]=dist[tmp[0]][tmp[1]]+1
                
