@@ -23,9 +23,9 @@ def bfs(c,r,board):
                yy=y+dy[i]
 
                if 0<=xx<r and 0<=yy<c and board[xx][yy]==0:
-                    board[xx][yy]=1
-                    des[xx][yy]=des[x][y]+1
-                    Q.append((xx,yy))
+                    board[xx][yy]=1 # 토마토가 익음
+                    des[xx][yy]=des[x][y]+1 # 익는데 까지 걸리는 시간
+                    Q.append((xx,yy)) # 익은 토마토
                          
 
 

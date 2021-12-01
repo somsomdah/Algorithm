@@ -12,6 +12,7 @@ def dfs(L,score,time):
      if time>m:
           return
 
+
      if L==n:
           ans=max(ans,score)
           return
